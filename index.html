@@ -1,0 +1,17 @@
+<html ng-app="store">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<title></title>
+</head>
+<body ng-controller="StoreController as store">
+	<div ng-repeat="product in store.products">
+		<h1> {{product.name}} </h1>
+		<h2> {{product.price | currency }} </h2>
+		<p> {{product.description}} </p>
+		<!-- button will only show if store(controller).product(var gem object).canPurchase(obj attr) is true. If set to false, button will not show -->
+		<button ng-show="product.canPurchase"> Add to cart </button>
+	</div>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
